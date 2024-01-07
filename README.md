@@ -17,23 +17,23 @@ The next step is cleaning and preparing the data in these dataframes. This proce
 
 Details:
 The cleaning of the Books dataset has been completed with the following steps:
-	Converted Year-Of-Publication to numeric, setting non-numeric values to NaN.
-	Replaced invalid years (those in the future or before 1800) with NaN.
-	Checked for missing values in key columns (Book-Author, Year-Of-Publication, Publisher). We found:
-	Book-Author: 1 missing value
-	Year-Of-Publication: 4,635 missing values
-	Publisher: 2 missing values
-	Dropped rows with missing values in these critical columns.
+-	Converted Year-Of-Publication to numeric, setting non-numeric values to NaN.
+-	Replaced invalid years (those in the future or before 1800) with NaN.
+-	Checked for missing values in key columns (Book-Author, Year-Of-Publication, Publisher). We found:
+-	Book-Author: 1 missing value
+-	Year-Of-Publication: 4,635 missing values
+-	Publisher: 2 missing values
+-	Dropped rows with missing values in these critical columns.
 The cleaning of the Users dataset has been done with these steps:
-	Invalid ages (less than 5 or greater than 100) have been replaced with NaN.
-	There are 112,010 missing values in the Age field.
-	We chose not to impute ages due to potential inaccuracies, and because removing all rows with missing ages could significantly reduce the dataset.
-	The Location field has been left as is for now, as normalization can be complex and may not be crucial for the recommendation system.
+-	Invalid ages (less than 5 or greater than 100) have been replaced with NaN.
+-	There are 112,010 missing values in the Age field.
+-	We chose not to impute ages due to potential inaccuracies, and because removing all rows with missing ages could significantly reduce the dataset.
+-	The Location field has been left as is for now, as normalization can be complex and may not be crucial for the recommendation system.
 The cleaning of the Ratings dataset has been completed with the following steps:
-	Validated ISBN references, ensuring all ratings correspond to books present in the cleaned Books dataset.
-	Checked for anomalies in Book-Rating, confirming all ratings are within the expected range (0-10).
-	No missing values were found in the cleaned Ratings dataset.
-	The size of the cleaned Ratings dataset is 1,017,065 rows.
+-	Validated ISBN references, ensuring all ratings correspond to books present in the cleaned Books dataset.
+-	Checked for anomalies in Book-Rating, confirming all ratings are within the expected range (0-10).
+-	No missing values were found in the cleaned Ratings dataset.
+-	The size of the cleaned Ratings dataset is 1,017,065 rows.
 
 ##### 3.	Build the Item Similarity Matrix
 We will calculate the similarity between items (books) using the user ratings. Commonly used methods for similarity include cosine similarity, Pearson correlation, or Jaccard similarity. We'll select cosine similarity for our current project. 
@@ -44,9 +44,9 @@ Small 5x5 example section of an Item Similarity Matrix, using ISBN as indices:
 ##### 4.	Generating Book Recommendations
 In this step, we'll use the Item Similarity Matrix to generate book recommendations using the recommend_books() function (Identical to recommend_books_with_images but without URLs).
 The process involves:
-	Selecting a book as input (either randomly or based on a specific ISBN).
-	Finding similar books based on the similarity matrix.
-	Ranking these similar books to recommend the most similar ones.
+-	Selecting a book as input (either randomly or based on a specific ISBN).
+-	Finding similar books based on the similarity matrix.
+-	Ranking these similar books to recommend the most similar ones.
 Code Excerpt and example with a book from the dataset (“Rising Tides”):
 ![image](https://github.com/jorgetyrakowski/BOOK-RECOMMENDATION-SYSTEM/assets/88347278/61548065-6ad6-4287-a79f-2b580c64a0c4)
 As we can see by the titles alone, these books share some similarities.
