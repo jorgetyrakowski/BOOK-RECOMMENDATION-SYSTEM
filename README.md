@@ -1,4 +1,5 @@
-The application for this project is a Book Recommendation System. It uses collected data from the internet (details in Data Sources segment) to predict what books a user is likely to enjoy based on a similar book they have read/are interested in.
+## The application for this project is a Book Recommendation System. 
+It uses collected data from the internet (details in Data Sources segment) to predict what books a user is likely to enjoy based on a similar book they have read/are interested in.
 The Recommendation System uses mainly the method known as Collaborative Filtering (CF) to achieve this. The underlying assumption of CF is that if a person A has the same opinion as a person B on an issue, A is more likely to have B's opinion on a different issue than that of a random person.
 
 Brief Model Explanation:
